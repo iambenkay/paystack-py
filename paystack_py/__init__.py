@@ -1,0 +1,1 @@
+from paystack_py.index import Paystack
