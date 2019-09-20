@@ -1,4 +1,5 @@
 README.md
+README.rst
 setup.py
 paystack_py/__init__.py
 paystack_py/index.py

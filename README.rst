@@ -8,6 +8,7 @@ simply import the `Paystack` class from the package and use it to initialize and
     ps = Paystack("<YOUR_API_KEY>")
 
     # To initiate a new Direct Payment
+
     url = ps.initialize('test@test.com', 50000, 'https://callback.com/url')
 
     # just redirect to the URL returned and in your callback view do
