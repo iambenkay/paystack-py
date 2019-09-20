@@ -1,10 +1,30 @@
-Metadata-Version: 1.0
+Metadata-Version: 2.1
 Name: paystack-py
-Version: 1.0.0
-Summary: For completing initializing and verifying paystack transactions
+Version: 1.0.2
+Summary: For completing, initializing and verifying paystack transactions
 Home-page: https://github.com/iambenkay/paystack-py
 Author: benkay
 Author-email: benjamincath@gmail.com
 License: Apache 2.0
-Description: UNKNOWN
+Description: # paystack-py
+        For completing, initializing and verifying paystack transactions
+        
+        simply import the `Paystack` class from the package and use it to initialize and verify transactions.
+        
+        ```python
+        from paystack_py import Paystack
+        
+        ps = Paystack("<YOUR_API_KEY>")
+        
+        # To initiate a new Direct Payment
+        url = ps.initialize('test@test.com', 50000, 'https://callback.com/url')
+        
+        # just redirect to the URL returned and in your callback view do
+        status = ps.verify('reference') # reference is a GET parameter from the request
+        
+        if status:
+            # give value to customer
+            pass
+        ```
 Platform: UNKNOWN
+Description-Content-Type: text/markdown

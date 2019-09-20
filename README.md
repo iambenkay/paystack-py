@@ -12,8 +12,9 @@ ps = Paystack("<YOUR_API_KEY>")
 url = ps.initialize('test@test.com', 50000, 'https://callback.com/url')
 
 # just redirect to the URL returned and in your callback view do
-status = ps.verify()
+status = ps.verify('reference') # reference is a GET parameter from the request
 
 if status:
     # give value to customer
+    pass
 ```
