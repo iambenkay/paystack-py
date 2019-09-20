@@ -1,0 +1,9 @@
+setup.py
+paystack_py/__init__.py
+paystack_py/index.py
+paystack_py.egg-info/PKG-INFO
+paystack_py.egg-info/SOURCES.txt
+paystack_py.egg-info/dependency_links.txt
+paystack_py.egg-info/not-zip-safe
+paystack_py.egg-info/requires.txt
+paystack_py.egg-info/top_level.txt
