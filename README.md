@@ -13,7 +13,7 @@ url = ps.initialize('test@test.com', 50000, 'https://callback.com/url')
 
 # just redirect to the URL returned and in your callback view do
 
-reference = request.GET.get("reference") ) # reference is a GET parameter from the request
+reference = request.GET.get("reference") # reference is a GET parameter from the request
 
 status = ps.verify(reference)
 
