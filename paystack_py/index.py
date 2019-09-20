@@ -52,12 +52,7 @@ class Paystack:
         :return: bool
         """
         try:
-            # send a request to Paystack verification endpoint
-            response_object = requests.get(f"https://api.paystack.co/transaction/verify/{reference}",
-                                           headers={"Authorization": f"Bearer {self.api_key}"})
-
-            # convert response object to a Dictionary
-            response = response_object.json()
+            response = self._query_verify_route(reference)
 
             # if "status" is positive then the process worked
             return True if response.get("status") else False
@@ -65,3 +60,31 @@ class Paystack:
         except requests.ConnectionError:
             print("There was a connection error")
             return False
+
+    def verify_and_authorize(self, reference):
+        """
+        Used to get authorization code for recurring debits
+        :param reference: the reference id of the transaction
+        :return: str
+        """
+        # confirm that the payment has been completed
+        if self.verify(reference):
+            response = self._query_verify_route(reference)
+            # return the auth code for recurring debits
+            return response["data"]["authorization"]["authorization_code"]
+        else:
+            # return a falsy value if the payment has not been verified
+            return None
+
+    def _query_verify_route(self, reference):
+        """
+        Used to query the Paystack REST API verify/ endpoint
+        :param reference: the reference id of the transaction
+        :return: dict
+        """
+        # send a request to Paystack verification endpoint
+        response_object = requests.get(f"https://api.paystack.co/transaction/verify/{reference}",
+                                       headers={"Authorization": f"Bearer {self.api_key}"})
+
+        # convert response object to a Dictionary and return it
+        return response_object.json()
