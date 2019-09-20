@@ -17,7 +17,7 @@ def test_that_charging_a_valid_card_works():
 
 def test_that_charging_an_invalid_card_works():
     y = int(str(datetime.datetime.now().year)[2:]) + 1
-    assert not ps.charge_a_card({
+    assert ps.charge_a_card({
         "number": "4084084084084082",
         "cvv": 408, 
         "expiry_month": 9,
