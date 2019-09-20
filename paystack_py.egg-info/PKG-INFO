@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: paystack-py
-Version: 1.0.3
+Version: 1.0.4
 Summary: For completing, initializing and verifying paystack transactions
 Home-page: https://github.com/iambenkay/paystack-py
 Author: benkay
