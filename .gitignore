@@ -3,3 +3,4 @@ venv/
 dist/
 .pytest_cache/
 __pycache__/
+paystack_py.egg-info/
