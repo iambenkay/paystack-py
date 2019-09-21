@@ -2,9 +2,10 @@
 For completing, initializing and verifying paystack transactions
 
 New in 1.0.5:
-    Now supports recurring debits and directly charging a card
-    included tests
+- Now supports recurring debits and directly charging a card
+- included tests
 
+#### Import the paystack class
 ```python
 from paystack_py import Paystack
 
@@ -26,7 +27,9 @@ if status:
 #### For recurring debits, instead of using verify above, use verify_and_authorize:
 ```python
     auth_code = ps.verify_and_authorize(reference)
-
+    if status:
+        # give value to customer and store auth_code.
+    pass
     new_auth_code = ps.recurring_payments(auth_code, "test@test.com", 50000)
 
     # just keep storing each subsequent authorization code so you can use it later.
