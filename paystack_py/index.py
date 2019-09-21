@@ -75,7 +75,7 @@ class Paystack:
         # convert response object to a Dictionary and return it
         return response_object.json()
 
-    def recurring_payment(self, authorization_code, email, account):
+    def recurring_payments(self, authorization_code, email, account):
         """
         :param authorization_code: the user's authorization code to continually charge his card
         :param email: the user's email

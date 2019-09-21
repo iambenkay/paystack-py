@@ -1,3 +1,5 @@
 venv/
 .idea/
 dist/
+.pytest_cache/
+__pycache__/

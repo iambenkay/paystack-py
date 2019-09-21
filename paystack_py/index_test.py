@@ -13,12 +13,12 @@ def test_that_charging_a_valid_card_works():
         "number": "4084084084084081",
         "cvv": 408, 
         "expiry_month": 9,
-        "expiry_year": y}, email="test@test.com", amount=500000) == True
+        "expiry_year": y}, email="test@test.com", amount=500000)
 
 def test_that_charging_an_invalid_card_works():
     y = int(str(datetime.datetime.now().year)[2:]) + 1
-    assert ps.charge_a_card({
+    assert not ps.charge_a_card({
         "number": "4084084084084082",
         "cvv": 408, 
         "expiry_month": 9,
-        "expiry_year": y}, "test@test.com", 500000) == False
+        "expiry_year": y}, "test@test.com", 500000)
